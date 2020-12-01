@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 import java.util.Stack;
 
 public class GrammarListenerImpl extends GrammarBaseListener {
@@ -29,7 +30,7 @@ public class GrammarListenerImpl extends GrammarBaseListener {
     public void exitFunc_expr_input(GrammarParser.Func_expr_inputContext ctx) {
         String varName = ctx.VAR().getText();
         curFunction.addVariable(varName);
-        curFunction.addExpression("scanf(\"%d\", " + varName + ");");
+        curFunction.addExpression("scanf(\"%d\", &" + varName + ");");
     }
 
     @Override
@@ -66,7 +67,7 @@ public class GrammarListenerImpl extends GrammarBaseListener {
     public void exitExpr_input(GrammarParser.Expr_inputContext ctx) {
         String varName = ctx.VAR().getText();
         code.addVariable(varName);
-        code.addExpression("scanf(\"%d\", " + varName + ");");
+        code.addExpression("scanf(\"%d\", &" + varName + ");");
     }
 
     @Override
@@ -82,12 +83,15 @@ public class GrammarListenerImpl extends GrammarBaseListener {
     public void exitExpr_assign(GrammarParser.Expr_assignContext ctx) {
         String varName = ctx.VAR().getText();
         code.addVariable(varName);
+        code.addVariables(variablesInExpression);
+        variablesInExpression.clear();
         code.addExpression(varName + " = " + expressionCalc + ";");
     }
 
     // EXPRESSION PART
 
     Stack<String> booleanExpression = new Stack<>();
+    List<String> variablesInExpression = new ArrayList<>();
     private String expressionCalc = "";
 
     @Override
@@ -124,7 +128,7 @@ public class GrammarListenerImpl extends GrammarBaseListener {
         }
         if (ctx.expr_bool_var() != null) {
             String varName = ctx.expr_bool_var().getText();
-            code.addVariable(varName);
+            variablesInExpression.add(varName);
             booleanExpression.add(varName);
         }
         if (ctx.expr_bool_() != null) {

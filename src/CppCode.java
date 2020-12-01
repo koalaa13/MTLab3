@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class CppCode {
     private final Set<String> variables = new HashSet<>();
@@ -34,7 +31,7 @@ public class CppCode {
         return "\t".repeat(cntTabs) + data;
     }
 
-    public void addVariables(Set<String> toAdd) {
+    public void addVariables(Collection<String> toAdd) {
         variables.addAll(toAdd);
     }
 

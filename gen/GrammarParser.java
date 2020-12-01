@@ -44,7 +44,7 @@ public class GrammarParser extends Parser {
 		return new String[] {
 			null, "'def '", "'('", "'):'", "'return '", "','", "'print('", "')'", 
 			"'='", "'int(input())'", "'*'", "'/'", "'+'", "'-'", "'or'", "'and'", 
-			"'not'", "'False'", "'True'", null, null, "'    '"
+			"'not'", "'False'", "'True'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();

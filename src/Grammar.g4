@@ -72,6 +72,6 @@ expr_input: VAR SPACE* '=' SPACE* 'int(input())' ;
 
 NEW_LINE : [\r\n]+ ;
 SPACE    : [ ] ;
-TAB      : '    ' ;
+TAB      : [\t] ;
 VAR      : [a-zA-Z][a-zA-Z0-9_]* ;
 INT      : [0-9]+ ;

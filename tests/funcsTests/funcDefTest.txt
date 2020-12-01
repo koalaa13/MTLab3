@@ -1,0 +1,10 @@
+def kek(a, b):
+	return 1
+
+def lol(c, d, e):
+	a = c + d - e
+	return a
+
+def cond(dd, ee, ll):
+	a = True or False
+	return not False

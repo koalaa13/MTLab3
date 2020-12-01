@@ -1,0 +1,7 @@
+a = True
+b =    False
+c   = a and   b
+c =   a   or b
+c   = not    a
+c = not   False
+c =    not True

@@ -1,0 +1,2 @@
+a = (True or False) and not False
+b = (not a and False) and (a or not True)
