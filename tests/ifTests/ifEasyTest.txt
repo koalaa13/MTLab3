@@ -1,0 +1,8 @@
+if True:
+	a = 3
+	b = int(input())
+else:
+	b = 3
+	a = int(input())
+print(a)
+print(b)

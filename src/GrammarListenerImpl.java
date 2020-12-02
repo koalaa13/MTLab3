@@ -10,6 +10,61 @@ public class GrammarListenerImpl extends GrammarBaseListener {
         return code;
     }
 
+    // WHILE PART
+
+    @Override
+    public void exitWhile_cond(GrammarParser.While_condContext ctx) {
+        code.addExpression("while (" + expressionCalc + ") {");
+    }
+
+    @Override
+    public void exitWhile_statement(GrammarParser.While_statementContext ctx) {
+        code.addExpression("}");
+    }
+
+    // IF PART
+
+    @Override
+    public void exitIf_else_assign(GrammarParser.If_else_assignContext ctx) {
+        String varName = ctx.VAR().getText();
+        code.addVariable(varName);
+        code.addExpression('\t' + varName + " = " + expressionCalc + ";");
+    }
+
+    @Override
+    public void exitIf_else_input(GrammarParser.If_else_inputContext ctx) {
+        String varName = ctx.VAR().getText();
+        code.addVariable(varName);
+        code.addExpression('\t' + "scanf(\"%d\", &" + varName + ");");
+    }
+
+    @Override
+    public void exitIf_else_output(GrammarParser.If_else_outputContext ctx) {
+        String varName = ctx.VAR().getText();
+        code.addVariable(varName);
+        code.addExpression('\t' + "printf(\"%d\", " + varName + ");");
+    }
+
+    @Override
+    public void exitIf_cond(GrammarParser.If_condContext ctx) {
+        code.addExpression("if (" + expressionCalc + ") {");
+    }
+
+    @Override
+    public void exitIf_statement(GrammarParser.If_statementContext ctx) {
+        code.addExpression("}");
+    }
+
+    @Override
+    public void enterElse_statement(GrammarParser.Else_statementContext ctx) {
+        code.addExpression("else {");
+    }
+
+    @Override
+    public void exitElse_statement(GrammarParser.Else_statementContext ctx) {
+        code.addExpression("}");
+    }
+
     // FUNC PART
 
     private CppCode curFunction = null;

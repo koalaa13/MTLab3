@@ -39,7 +39,7 @@ public class CppCode {
         variables.add(var);
     }
 
-    public void addExpressions(Set<String> toAdd) {
+    public void addExpressions(Collection<String> toAdd) {
         expressions.addAll(toAdd);
     }
 

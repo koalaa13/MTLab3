@@ -17,6 +17,136 @@ public interface GrammarListener extends ParseTreeListener {
 	 */
 	void exitStart(GrammarParser.StartContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link GrammarParser#while_statement}.
+	 * @param ctx the parse tree
+	 */
+	void enterWhile_statement(GrammarParser.While_statementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link GrammarParser#while_statement}.
+	 * @param ctx the parse tree
+	 */
+	void exitWhile_statement(GrammarParser.While_statementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link GrammarParser#while_cond}.
+	 * @param ctx the parse tree
+	 */
+	void enterWhile_cond(GrammarParser.While_condContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link GrammarParser#while_cond}.
+	 * @param ctx the parse tree
+	 */
+	void exitWhile_cond(GrammarParser.While_condContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link GrammarParser#if_statement}.
+	 * @param ctx the parse tree
+	 */
+	void enterIf_statement(GrammarParser.If_statementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link GrammarParser#if_statement}.
+	 * @param ctx the parse tree
+	 */
+	void exitIf_statement(GrammarParser.If_statementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link GrammarParser#if_with_else_statement}.
+	 * @param ctx the parse tree
+	 */
+	void enterIf_with_else_statement(GrammarParser.If_with_else_statementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link GrammarParser#if_with_else_statement}.
+	 * @param ctx the parse tree
+	 */
+	void exitIf_with_else_statement(GrammarParser.If_with_else_statementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link GrammarParser#else_statement}.
+	 * @param ctx the parse tree
+	 */
+	void enterElse_statement(GrammarParser.Else_statementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link GrammarParser#else_statement}.
+	 * @param ctx the parse tree
+	 */
+	void exitElse_statement(GrammarParser.Else_statementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link GrammarParser#if_else_body}.
+	 * @param ctx the parse tree
+	 */
+	void enterIf_else_body(GrammarParser.If_else_bodyContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link GrammarParser#if_else_body}.
+	 * @param ctx the parse tree
+	 */
+	void exitIf_else_body(GrammarParser.If_else_bodyContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link GrammarParser#if_else_line}.
+	 * @param ctx the parse tree
+	 */
+	void enterIf_else_line(GrammarParser.If_else_lineContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link GrammarParser#if_else_line}.
+	 * @param ctx the parse tree
+	 */
+	void exitIf_else_line(GrammarParser.If_else_lineContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link GrammarParser#if_else_expr}.
+	 * @param ctx the parse tree
+	 */
+	void enterIf_else_expr(GrammarParser.If_else_exprContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link GrammarParser#if_else_expr}.
+	 * @param ctx the parse tree
+	 */
+	void exitIf_else_expr(GrammarParser.If_else_exprContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link GrammarParser#whole_if}.
+	 * @param ctx the parse tree
+	 */
+	void enterWhole_if(GrammarParser.Whole_ifContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link GrammarParser#whole_if}.
+	 * @param ctx the parse tree
+	 */
+	void exitWhole_if(GrammarParser.Whole_ifContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link GrammarParser#if_cond}.
+	 * @param ctx the parse tree
+	 */
+	void enterIf_cond(GrammarParser.If_condContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link GrammarParser#if_cond}.
+	 * @param ctx the parse tree
+	 */
+	void exitIf_cond(GrammarParser.If_condContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link GrammarParser#if_else_output}.
+	 * @param ctx the parse tree
+	 */
+	void enterIf_else_output(GrammarParser.If_else_outputContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link GrammarParser#if_else_output}.
+	 * @param ctx the parse tree
+	 */
+	void exitIf_else_output(GrammarParser.If_else_outputContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link GrammarParser#if_else_input}.
+	 * @param ctx the parse tree
+	 */
+	void enterIf_else_input(GrammarParser.If_else_inputContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link GrammarParser#if_else_input}.
+	 * @param ctx the parse tree
+	 */
+	void exitIf_else_input(GrammarParser.If_else_inputContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link GrammarParser#if_else_assign}.
+	 * @param ctx the parse tree
+	 */
+	void enterIf_else_assign(GrammarParser.If_else_assignContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link GrammarParser#if_else_assign}.
+	 * @param ctx the parse tree
+	 */
+	void exitIf_else_assign(GrammarParser.If_else_assignContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link GrammarParser#func}.
 	 * @param ctx the parse tree
 	 */

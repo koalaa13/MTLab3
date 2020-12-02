@@ -1,6 +1,28 @@
 grammar Grammar;
 
-start: (func | (expr NEW_LINE))* ;
+start: (while_statement | whole_if | func | (expr NEW_LINE))* ;
+
+while_statement: 'while' SPACE* while_cond SPACE* ':' NEW_LINE if_else_body ;
+while_cond: expr_calc ;
+
+if_statement: 'if ' SPACE* if_cond SPACE* ':' NEW_LINE if_else_body;
+if_with_else_statement: if_statement else_statement;
+else_statement: 'else' SPACE* ':' NEW_LINE if_else_body ;
+if_else_body: (TAB if_else_line)+ ;
+if_else_line: if_else_expr NEW_LINE ;
+if_else_expr: if_else_assign
+            | expr_calc
+            | if_else_input
+            | if_else_output
+            ;
+whole_if: if_with_else_statement
+        | if_statement
+        ;
+if_cond: expr_calc ;
+
+if_else_output: 'print(' SPACE* VAR SPACE* ')' ;
+if_else_input: VAR SPACE* '=' SPACE* 'int(input())' ;
+if_else_assign: VAR SPACE* '=' SPACE* expr_calc ;
 
 func: func_def NEW_LINE func_body;
 

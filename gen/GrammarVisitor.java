@@ -16,6 +16,84 @@ public interface GrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitStart(GrammarParser.StartContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link GrammarParser#while_statement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitWhile_statement(GrammarParser.While_statementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GrammarParser#while_cond}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitWhile_cond(GrammarParser.While_condContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GrammarParser#if_statement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIf_statement(GrammarParser.If_statementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GrammarParser#if_with_else_statement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIf_with_else_statement(GrammarParser.If_with_else_statementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GrammarParser#else_statement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitElse_statement(GrammarParser.Else_statementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GrammarParser#if_else_body}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIf_else_body(GrammarParser.If_else_bodyContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GrammarParser#if_else_line}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIf_else_line(GrammarParser.If_else_lineContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GrammarParser#if_else_expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIf_else_expr(GrammarParser.If_else_exprContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GrammarParser#whole_if}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitWhole_if(GrammarParser.Whole_ifContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GrammarParser#if_cond}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIf_cond(GrammarParser.If_condContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GrammarParser#if_else_output}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIf_else_output(GrammarParser.If_else_outputContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GrammarParser#if_else_input}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIf_else_input(GrammarParser.If_else_inputContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GrammarParser#if_else_assign}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIf_else_assign(GrammarParser.If_else_assignContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link GrammarParser#func}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

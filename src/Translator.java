@@ -22,7 +22,7 @@ public class Translator {
     }
 
     public static void main(String[] args) throws IOException {
-        File file = new File("tests/funcsTests/funcInvokeTest.txt");
+        File file = new File("tests/whileTests/whileEasyTest.txt");
         StringBuilder input = new StringBuilder();
         try (Scanner reader = new Scanner(file)) {
             while (reader.hasNextLine()) {
